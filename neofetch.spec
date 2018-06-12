@@ -1,5 +1,5 @@
 Name:           neofetch
-Version:        3.4.0
+Version:        4.0.2
 Release:        1%{?dist}
 Summary:        CLI system information tool written in Bash
 
@@ -8,12 +8,14 @@ URL:            https://github.com/dylanaraps/%{name}
 Source0:        https://github.com/dylanaraps/%{name}/archive/%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildArch:      noarch
-Requires:       bash >= 3.0
+Requires:       bash >= 3.2, bind-utils, caca-utils, coreutils, curl, gawk
+Requires:       grep, jp2a, pciutils, scrot
 # EPEL packages don't yet have support for weak-dependencies
 # https://fedoraproject.org/wiki/Packaging:WeakDependencies#Weak_dependencies
+# Headless machines often prefer to keep their system from X-utilities.
+# Therefore, these are provided as recommended dependencies.
 %if 0%{?fedora} >= 23
-Recommends:     bind-utils, coreutils, curl, gawk, grep, ImageMagick, lspci
-Recommends:     w3m-img, xdotool, xorg-x11-server-utils, xorg-x11-utils
+Recommends:     ImageMagick, w3m-img, xorg-x11-server-utils, xorg-x11-utils
 %endif
 
 %description
@@ -33,13 +35,15 @@ sed 's,/usr/bin/env bash,%{_bindir}/bash,g' -i neofetch
 
 %files
 %{_bindir}/%{name}
-%{_datadir}/%{name}
-%config(noreplace) %{_sysconfdir}/%{name}
 %license LICENSE.md
 %doc README.md CHANGELOG.md
 %{_mandir}/man1/%{name}.1*
 
 %changelog
+* Tue Jun 12 2018 K. de Jong <keesdejong@fedoraproject.org> - 4.0.2-1
+- New upstream release
+- Cleaned up dependencies
+
 * Fri Apr 06 2018 Kees de Jong <keesdejong@fedoraproject.org> - 3.4.0-1
 - New upstream release
 
@@ -47,4 +51,4 @@ sed 's,/usr/bin/env bash,%{_bindir}/bash,g' -i neofetch
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_28_Mass_Rebuild
 
 * Mon Feb 13 2017 Kees de Jong <keesdejong@fedoraproject.org> - 3.3.0-1
-- Initial package.
+- Initial package
