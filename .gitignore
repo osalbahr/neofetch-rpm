@@ -2,3 +2,5 @@
 /neofetch-3.4.0.tar.gz
 *.swp
 /neofetch-4.0.2.tar.gz
+results_neofetch/*
+*.src.rpm
