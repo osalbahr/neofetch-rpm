@@ -1,5 +1,5 @@
 Name:           neofetch
-Version:        4.0.2
+Version:        5.0.0
 Release:        1%{?dist}
 Summary:        CLI system information tool written in Bash
 
@@ -40,6 +40,9 @@ sed 's,/usr/bin/env bash,%{_bindir}/bash,g' -i neofetch
 %{_mandir}/man1/%{name}.1*
 
 %changelog
+* Wed Jun 20 2018 K. de Jong <keesdejong@fedoraproject.org> - 5.0.0-1
+- New upstream release
+
 * Tue Jun 12 2018 K. de Jong <keesdejong@fedoraproject.org> - 4.0.2-1
 - New upstream release
 - Cleaned up dependencies
