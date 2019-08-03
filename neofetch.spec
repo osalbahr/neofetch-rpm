@@ -1,6 +1,6 @@
 Name:           neofetch
 Version:        6.0.0
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        CLI system information tool written in Bash
 
 License:        MIT
@@ -8,15 +8,19 @@ URL:            https://github.com/dylanaraps/%{name}
 Source0:        https://github.com/dylanaraps/%{name}/archive/%{version}.tar.gz#/%{name}-%{version}.tar.gz
 
 BuildArch:      noarch
-Requires:       bash >= 3.2, bind-utils, caca-utils, coreutils, curl, gawk
-Requires:       grep, jp2a, pciutils, scrot
-# EPEL packages don't yet have support for weak-dependencies
-# https://fedoraproject.org/wiki/Packaging:WeakDependencies#Weak_dependencies
-# Headless machines often prefer to keep their system from X-utilities.
-# Therefore, these are provided as recommended dependencies.
-%if 0%{?fedora} >= 23
-Recommends:     ImageMagick, w3m-img, xorg-x11-server-utils, xorg-x11-utils
-%endif
+Requires:       bash >= 3.2
+Requires:       bind-utils
+Requires:       coreutils
+Requires:       gawk
+Requires:       grep
+Requires:       pciutils
+Recommends:     caca-utils
+Recommends:     catimg
+Recommends:     ImageMagick
+Recommends:     jp2a
+Recommends:     w3m-img
+Recommends:     xorg-x11-server-utils
+Recommends:     xorg-x11-utils
 
 %description
 Neofetch displays information about your system next to an image,
@@ -40,6 +44,9 @@ sed 's,/usr/bin/env bash,%{_bindir}/bash,g' -i neofetch
 %{_mandir}/man1/%{name}.1*
 
 %changelog
+* Sat Aug 03 2019 K. de Jong <keesdejong@fedoraproject.org> - 6.0.0-4
+- Red Hat Bugzilla - Bug 1736808
+
 * Thu Jul 25 2019 Fedora Release Engineering <releng@fedoraproject.org> - 6.0.0-3
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_31_Mass_Rebuild
 
