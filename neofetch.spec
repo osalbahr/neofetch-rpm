@@ -1,6 +1,6 @@
 Name:           neofetch
-Version:        6.0.0
-Release:        4%{?dist}
+Version:        6.1.0
+Release:        1%{?dist}
 Summary:        CLI system information tool written in Bash
 
 License:        MIT
@@ -44,6 +44,9 @@ sed 's,/usr/bin/env bash,%{_bindir}/bash,g' -i neofetch
 %{_mandir}/man1/%{name}.1*
 
 %changelog
+* Fri Sep 06 2019 K. de Jong <keesdejong@fedoraproject.org> - 6.1.0-1
+- New upstream release
+
 * Sat Aug 03 2019 K. de Jong <keesdejong@fedoraproject.org> - 6.0.0-4
 - Red Hat Bugzilla - Bug 1736808
 
