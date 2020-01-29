@@ -30,7 +30,7 @@ running, what theme/icons you're using and more.
 
 %prep
 %autosetup
-sed 's,/usr/bin/env bash,%{_bindir}/bash,g' -i neofetch
+sed 's,/usr/bin/env bash,/usr/bin/bash,g' -i neofetch
 
 %build
 
