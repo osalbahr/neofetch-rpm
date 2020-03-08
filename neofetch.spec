@@ -1,6 +1,6 @@
 Name:           neofetch
-Version:        6.1.0
-Release:        2%{?dist}
+Version:        7.0.0
+Release:        1%{?dist}
 Summary:        CLI system information tool written in Bash
 
 License:        MIT
@@ -40,10 +40,13 @@ sed 's,/usr/bin/env bash,/usr/bin/bash,g' -i neofetch
 %files
 %{_bindir}/%{name}
 %license LICENSE.md
-%doc README.md CHANGELOG.md
+%doc README.md
 %{_mandir}/man1/%{name}.1*
 
 %changelog
+* Sun Mar 08 2020 K. de Jong <keesdejong@fedoraproject.org> - 7.0.0-1
+- New upstream release
+
 * Wed Jan 29 2020 Fedora Release Engineering <releng@fedoraproject.org> - 6.1.0-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_32_Mass_Rebuild
 
