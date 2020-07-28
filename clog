@@ -1,1 +1,1 @@
-New upstream release
+Recommend xdpyinfo xprop xrandr xrdb xwininfo, not xorg-x11-{server-,}utils
