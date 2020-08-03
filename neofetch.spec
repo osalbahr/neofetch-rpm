@@ -1,6 +1,6 @@
 Name:           neofetch
 Version:        7.0.0
-Release:        1%{?dist}
+Release:        3%{?dist}
 Summary:        CLI system information tool written in Bash
 
 License:        MIT
@@ -19,8 +19,11 @@ Recommends:     catimg
 Recommends:     ImageMagick
 Recommends:     jp2a
 Recommends:     w3m-img
-Recommends:     xorg-x11-server-utils
-Recommends:     xorg-x11-utils
+Recommends:     xdpyinfo
+Recommends:     xprop
+Recommends:     xrandr
+Recommends:     xrdb
+Recommends:     xwininfo
 
 %description
 Neofetch displays information about your system next to an image,
@@ -44,6 +47,12 @@ sed 's,/usr/bin/env bash,/usr/bin/bash,g' -i neofetch
 %{_mandir}/man1/%{name}.1*
 
 %changelog
+* Tue Jul 28 2020 Adam Jackson <ajax@redhat.com> - 7.0.0-3
+- Recommend xdpyinfo xprop xrandr xrdb xwininfo, not xorg-x11-{server-,}utils
+
+* Tue Jul 28 2020 Fedora Release Engineering <releng@fedoraproject.org> - 7.0.0-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_33_Mass_Rebuild
+
 * Sun Mar 08 2020 K. de Jong <keesdejong@fedoraproject.org> - 7.0.0-1
 - New upstream release
 
