@@ -1,6 +1,6 @@
 Name:           neofetch
-Version:        7.0.0
-Release:        3%{?dist}
+Version:        7.1.0
+Release:        1%{?dist}
 Summary:        CLI system information tool written in Bash
 
 License:        MIT
@@ -47,6 +47,9 @@ sed 's,/usr/bin/env bash,/usr/bin/bash,g' -i neofetch
 %{_mandir}/man1/%{name}.1*
 
 %changelog
+* Mon Aug 03 2020 K. de Jong <keesdejong@fedoraproject.org> - 7.1.0-1
+- new version
+
 * Tue Jul 28 2020 Adam Jackson <ajax@redhat.com> - 7.0.0-3
 - Recommend xdpyinfo xprop xrandr xrdb xwininfo, not xorg-x11-{server-,}utils
 
