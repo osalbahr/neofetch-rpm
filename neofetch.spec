@@ -1,6 +1,6 @@
 Name:           neofetch
 Version:        7.1.0
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        CLI system information tool written in Bash
 
 License:        MIT
@@ -15,7 +15,6 @@ Requires:       gawk
 Requires:       grep
 Requires:       pciutils
 Recommends:     caca-utils
-Recommends:     catimg
 Recommends:     ImageMagick
 Recommends:     jp2a
 Recommends:     w3m-img
@@ -47,6 +46,9 @@ sed 's,/usr/bin/env bash,/usr/bin/bash,g' -i neofetch
 %{_mandir}/man1/%{name}.1*
 
 %changelog
+* Tue Aug 25 2020 K. de Jong <keesdejong@fedoraproject.org> - 7.1.0-2
+- catimg dependency removed, scheduled for removal #1872247
+
 * Mon Aug 03 2020 K. de Jong <keesdejong@fedoraproject.org> - 7.1.0-1
 - new version
 
