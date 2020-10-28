@@ -1,15 +1,16 @@
 Name:           neofetch
 Version:        7.1.0
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        CLI system information tool written in Bash
 
 License:        MIT
 URL:            https://github.com/dylanaraps/%{name}
-Source0:        https://github.com/dylanaraps/%{name}/archive/%{version}.tar.gz#/%{name}-%{version}.tar.gz
+Source0:        %{URL}/archive/%{version}/%{name}-%{version}.tar.gz
 
 BuildArch:      noarch
 Requires:       bash >= 3.2
 Requires:       bind-utils
+Requires:       catimg
 Requires:       coreutils
 Requires:       gawk
 Requires:       grep
@@ -46,6 +47,9 @@ sed 's,/usr/bin/env bash,/usr/bin/bash,g' -i neofetch
 %{_mandir}/man1/%{name}.1*
 
 %changelog
+* Wed Oct 28 2020 K. de Jong <keesdejong@fedoraproject.org> - 7.1.0-3
+- catimg package available again #1878514
+
 * Tue Aug 25 2020 K. de Jong <keesdejong@fedoraproject.org> - 7.1.0-2
 - catimg dependency removed, scheduled for removal #1872247
 
