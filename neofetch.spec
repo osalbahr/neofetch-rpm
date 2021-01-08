@@ -8,6 +8,7 @@ URL:            https://github.com/dylanaraps/%{name}
 Source0:        %{URL}/archive/%{version}/%{name}-%{version}.tar.gz
 
 BuildArch:      noarch
+BuildRequires:  make
 Requires:       bash >= 3.2
 Requires:       bind-utils
 Requires:       catimg
