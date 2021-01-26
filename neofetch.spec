@@ -1,6 +1,6 @@
 Name:           neofetch
 Version:        7.1.0
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        CLI system information tool written in Bash
 
 License:        MIT
@@ -48,6 +48,9 @@ sed 's,/usr/bin/env bash,/usr/bin/bash,g' -i neofetch
 %{_mandir}/man1/%{name}.1*
 
 %changelog
+* Tue Jan 26 2021 Fedora Release Engineering <releng@fedoraproject.org> - 7.1.0-4
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_34_Mass_Rebuild
+
 * Wed Oct 28 2020 K. de Jong <keesdejong@fedoraproject.org> - 7.1.0-3
 - catimg package available again #1878514
 
