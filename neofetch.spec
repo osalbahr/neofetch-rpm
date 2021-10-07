@@ -1,11 +1,12 @@
 Name:           neofetch
 Version:        7.1.0
-Release:        4%{?dist}
+Release:        5%{?dist}
 Summary:        CLI system information tool written in Bash
 
 License:        MIT
 URL:            https://github.com/dylanaraps/%{name}
 Source0:        %{URL}/archive/%{version}/%{name}-%{version}.tar.gz
+Patch0:         fedora_logo.patch
 
 BuildArch:      noarch
 BuildRequires:  make
@@ -48,6 +49,9 @@ sed 's,/usr/bin/env bash,/usr/bin/bash,g' -i neofetch
 %{_mandir}/man1/%{name}.1*
 
 %changelog
+* Wed Oct 06 2021 K. de Jong <keesdejong@fedoraproject.org> - 7.1.0-5
+- Applied patch to update the Fedora logo
+
 * Tue Jan 26 2021 Fedora Release Engineering <releng@fedoraproject.org> - 7.1.0-4
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_34_Mass_Rebuild
 
